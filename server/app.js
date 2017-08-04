@@ -9,6 +9,8 @@ var db = require('./modules/db.js');
 
 //ROUTE MODULES
 var index = require('./routes/index.js');
+var catalog = require('./routes/catalog.js');
+
 
 //APP CONFIG
 app.set('port', (process.env.PORT || 8080));
@@ -19,6 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('server/public'));
 
 //ROUTES
+app.use('/catalog', catalog);
 app.use('/', index);
 
 //LISTEN
