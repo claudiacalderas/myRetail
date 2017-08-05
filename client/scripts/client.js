@@ -1,4 +1,4 @@
-var myRetailApp = angular.module('myRetailApp', ['ngRoute','ngMaterial']);
+var myRetailApp = angular.module('myRetailApp', ['ngRoute','ngMaterial','ngSanitize']);
 
 // Angular Material Theme Configuration
 myRetailApp.config(['$mdThemingProvider', function($mdThemingProvider) {

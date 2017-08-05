@@ -2,13 +2,42 @@
   <div layout="column" flex="10"></div>
   <div layout="row" flex="80">
     <div layout="column" flex="40">
-
+      <span>{{catalogItem.title}}</span>
       <img ng-src="{{catalogItem.Images[0].PrimaryImage[0].image}}">
 
 
     </div>
     <div layout="column" flex="10"></div>
     <div layout="column" flex="40">
+      <!-- PRICE -->
+      <div layout="row">
+        <div>
+          <span>{{catalogItem.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
+        </div>
+        <div>
+          <span>{{catalogItem.Offers[0].OfferPrice[0].priceQualifier}}</span>
+        </div>
+      </div>
+      <br>
+      <!-- PROMOTIONS -->
+      <div ng-repeat="promotion in catalogItem.Promotions">
+        <span>{{promotion.Description[0].shortDescription}}</span>
+      </div>
+      <!-- QUANTITY -->
+
+      <!-- BUTTONS (PICK UP IN STORE, ADD TO CART) -->
+
+      <!-- RETURNS -->
+
+      <!-- BUTTONS (ADD TO REGISTRY, ADD TO LIST, SHARE) -->
+
+      <!-- PRODUCT HIGHLIGHTS -->
+      <br>
+      <span>product highlights</span>
+      <br>
+      <div ng-repeat="feature in catalogItem.ItemDescription[0].features">
+        <p ng-bind-html="feature"></p>
+      </div>
 
     </div>
   </div>

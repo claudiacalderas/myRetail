@@ -76,6 +76,14 @@ module.exports = function(grunt){
               'angular-messages.min.js',
               'angular-messages.min.js.map'],
         dest: 'server/public/vendors/angular-messages/'
+      },
+      angularsanitize: {
+        expand: true,
+        cwd: 'node_modules/angular-sanitize/',
+        src: ['angular-sanitize.js',
+              'angular-sanitize.min.js',
+              'angular-sanitize.min.js.map'],
+        dest: 'server/public/vendors/angular-sanitize/'
       }
     },
     watch: {
