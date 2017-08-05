@@ -16,7 +16,6 @@ myRetailApp.factory('DataService', ['$http', '$q', function($http, $q) {
       });
       return deferred.promise;
     }
-
   };
 
 }]);

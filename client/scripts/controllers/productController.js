@@ -2,6 +2,7 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
                       function($scope, $http, DataService) {
 
   console.log('ProductController loaded');
+  // $scope.returnDescription = 
 
   // Calls Factory function that gets catalog information from the database
   DataService.getCatalogItem().then(function(data){

@@ -1,0 +1,19 @@
+
+
+.md-button.pickUpBtn {
+    color: white !important;
+    background-color: black !important;
+    font-weight: 300 !important;
+}
+
+.md-button.addToCartBtn {
+    color: white !important;
+    background-color: rgb(204,0,0) !important;
+    font-weight: 300 !important;
+}
+
+.md-button.secondaryActionsBtn {
+    color: black !important;
+    background-color: rgb(243,243,243) !important;
+    font-weight: 300 !important;
+}

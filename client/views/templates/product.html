@@ -2,12 +2,19 @@
   <div layout="column" flex="10"></div>
   <div layout="row" flex="80">
     <div layout="column" flex="40">
-      <span>{{catalogItem.title}}</span>
+      <!-- TITLE -->
+      <span ng-bind-html="catalogItem.title"></span>
+      <!-- PRIMARY IMAGE -->
       <img ng-src="{{catalogItem.Images[0].PrimaryImage[0].image}}">
+      <!-- VIEW LARGER -->
+      <!-- CAROUSEL -->
+      <!-- REVIEWS -->
 
 
     </div>
+
     <div layout="column" flex="10"></div>
+
     <div layout="column" flex="40">
       <!-- PRICE -->
       <div layout="row">
@@ -24,21 +31,66 @@
         <span>{{promotion.Description[0].shortDescription}}</span>
       </div>
       <!-- QUANTITY -->
+      <div layout="row">
+        <div>
+          <span>quantity:</span>
+        </div>
+        <div>
+          <span>-</span>
+        </div>
+        <div>
+          <span>1</span>
+        </div>
+        <div>
+          <span>+</span>
+        </div>
+
+      </div>
 
       <!-- BUTTONS (PICK UP IN STORE, ADD TO CART) -->
+      <div layout="row">
+        <div layout="column" layout-align="center center">
+          <md-button class="pickUpBtn md-raised" type="submit" name="pickUp" aria-label="Pick up in store" value="Pick Up" ng-click="">PICK UP IN STORE</md-button>
+          <span>find in a store</span>
+        </div>
+        <div>
+          <md-button class="addToCartBtn md-raised" type="submit" name="addToCart" aria-label="Add To Cart" value="Add To Cart" ng-click="">ADD TO CART</md-button>
+        </div>
+      </div>
+      <!-- FIND IN A STORE -->
 
       <!-- RETURNS -->
-
+      <div layout="row">
+        <div flex="20">
+          <span>returns</span>
+        </div>
+        <div>
+          <!-- <span ng-bind-html="returnDescription"></span> -->
+          <span>This item must be returned within 30 days of the ship date. See
+          <!-- <a ng-href="{{catalogItem.ReturnPolicy[0].legalCopy}}">return policy</a> -->
+          for details. Prices, promotions,styles and availability may vary by store
+          and online</span>
+        </div>
+      </div>
       <!-- BUTTONS (ADD TO REGISTRY, ADD TO LIST, SHARE) -->
-
+      <div layout="row">
+        <div>
+          <md-button class="secondaryActionsBtn" type="submit" name="addToRegistry" aria-label="Add to registry" value="Add to registry" ng-click="">ADD TO REGISTRY</md-button>
+        </div>
+        <div>
+          <md-button class="secondaryActionsBtn" type="submit" name="addToList" aria-label="Add to list" value="Add to list" ng-click="">ADD TO LIST</md-button>
+        </div>
+        <div>
+          <md-button class="secondaryActionsBtn" type="submit" name="share" aria-label="Share" value="Share" ng-click="">SHARE</md-button>
+        </div>
+      </div>
       <!-- PRODUCT HIGHLIGHTS -->
       <br>
       <span>product highlights</span>
       <br>
       <div ng-repeat="feature in catalogItem.ItemDescription[0].features">
-        <p ng-bind-html="feature"></p>
+        <span ng-bind-html="feature"></span>
       </div>
-
     </div>
   </div>
 

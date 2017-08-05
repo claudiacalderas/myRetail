@@ -11,7 +11,6 @@ var db = require('./modules/db.js');
 var index = require('./routes/index.js');
 var catalog = require('./routes/catalog.js');
 
-
 //APP CONFIG
 app.set('port', (process.env.PORT || 8080));
 
