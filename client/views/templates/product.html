@@ -3,30 +3,52 @@
   <div layout="row" flex="80">
     <div layout="column" flex="40">
       <!-- TITLE -->
-      <span ng-bind-html="catalogItem.title"></span>
+      <div class="sectionContainer">
+        <span ng-bind-html="catalogItem.title"></span>
+      </div>
+
       <!-- PRIMARY IMAGE -->
-      <img id="primaryImage" ng-src="{{catalogItem.Images[0].PrimaryImage[0].image}}">
+      <div class="sectionContainer" layout-align="center center">
+        <img id="primaryImage" ng-src="{{catalogItem.Images[0].PrimaryImage[0].image}}">
+      </div>
+
       <!-- VIEW LARGER -->
-      
+
       <!-- CAROUSEL -->
-      <div class="slideshow-container" layout="row" layout-align="center center">
-        <div class="prev" ng-click="moveSlides(-1)">&#10094;</div>
-        <div ng-repeat="slide in slides">
-          <img ng-src="{{slide.image}}" ng-class="{visible: (slide.visible === true), invisible: (slide.visible === false)}" style="width:100%">
+      <div class="sectionContainer" layout="row">
+        <div flex="20"></div>
+        <div flex="60" layout="row" layout-align="center center">
+          <div class="prev" ng-click="moveSlides(-1)">&#10094;</div>
+          <div ng-repeat="slide in slides">
+            <img ng-src="{{slide.image}}" ng-class="{visible: (slide.visible === true), invisible: (slide.visible === false)}" style="width:100%">
+          </div>
+          <div class="next" ng-click="moveSlides(1)">&#10095;</div>
         </div>
-        <div class="next" ng-click="moveSlides(1)">&#10095;</div>
+        <div flex="20"></div>
       </div>
 
       <!-- REVIEWS -->
-
-
+      <div class="sectionContainer" layout="row">
+        <div flex="40" layout-align="start end">
+          <span class="material-icons md-18">star</span>
+          <span class="material-icons md-18">star</span>
+          <span class="material-icons md-18">star</span>
+          <span class="material-icons md-18">star</span>
+          <span class="material-icons md-18">star</span>
+          <span>overall</span>
+        </div>
+        <div flex="10"></div>
+        <div flex="40" layout-align="end end">
+          <span>view all {{catalogItem.CustomerReview[0].Reviews.length}} reviews</span>
+        </div>
+      </div>
     </div>
 
     <div layout="column" flex="10"></div>
 
     <div layout="column" flex="40">
       <!-- PRICE -->
-      <div layout="row">
+      <div class="sectionContainer" layout="row">
         <div>
           <span>{{catalogItem.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
         </div>
@@ -35,12 +57,16 @@
         </div>
       </div>
       <br>
+      
       <!-- PROMOTIONS -->
-      <div ng-repeat="promotion in catalogItem.Promotions">
-        <span>{{promotion.Description[0].shortDescription}}</span>
+      <div class="sectionContainer">
+        <div ng-repeat="promotion in catalogItem.Promotions">
+          <span>{{promotion.Description[0].shortDescription}}</span>
+        </div>
       </div>
+
       <!-- QUANTITY -->
-      <div layout="row">
+      <div class="sectionContainer" layout="row">
         <div>
           <span>quantity:</span>
         </div>
@@ -53,11 +79,10 @@
         <div>
           <span>+</span>
         </div>
-
       </div>
 
       <!-- BUTTONS (PICK UP IN STORE, ADD TO CART) -->
-      <div layout="row">
+      <div class="sectionContainer" layout="row">
         <div layout="column" layout-align="center center">
           <md-button class="pickUpBtn md-raised" type="submit" name="pickUp" aria-label="Pick up in store" value="Pick Up" ng-click="">PICK UP IN STORE</md-button>
           <!-- FIND IN A STORE -->
@@ -67,8 +92,9 @@
           <md-button class="addToCartBtn md-raised" type="submit" name="addToCart" aria-label="Add To Cart" value="Add To Cart" ng-click="">ADD TO CART</md-button>
         </div>
       </div>
+
       <!-- RETURNS -->
-      <div layout="row">
+      <div class="sectionContainer" layout="row">
         <div flex="20">
           <span>returns</span>
         </div>
@@ -80,8 +106,9 @@
           and online</span>
         </div>
       </div>
+
       <!-- BUTTONS (ADD TO REGISTRY, ADD TO LIST, SHARE) -->
-      <div layout="row">
+      <div class="sectionContainer" layout="row">
         <div>
           <md-button class="secondaryActionsBtn" type="submit" name="addToRegistry" aria-label="Add to registry" value="Add to registry" ng-click="">ADD TO REGISTRY</md-button>
         </div>
@@ -92,13 +119,17 @@
           <md-button class="secondaryActionsBtn" type="submit" name="share" aria-label="Share" value="Share" ng-click="">SHARE</md-button>
         </div>
       </div>
+
       <!-- PRODUCT HIGHLIGHTS -->
-      <br>
-      <span>product highlights</span>
-      <br>
-      <div ng-repeat="feature in catalogItem.ItemDescription[0].features">
-        <span ng-bind-html="feature"></span>
+      <div class="sectionContainer">
+        <span>product highlights</span>
+        <br>
+        <br>
+        <div ng-repeat="feature in catalogItem.ItemDescription[0].features">
+          <span ng-bind-html="feature"></span>
+        </div>
       </div>
+
     </div>
   </div>
 

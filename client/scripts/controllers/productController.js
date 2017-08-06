@@ -2,7 +2,7 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
                       function($scope, $http, DataService) {
 
   // Number of visible images for carousel
-  NUM_VISIBLE_IMAGES = 2;
+  NUM_VISIBLE_IMAGES = 3;
 
   // Array of alternate images for carousel
   $scope.slides = [];
@@ -27,7 +27,7 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
     for (var i = 0; i < $scope.catalogItem.Images[0].AlternateImages.length; i++) {
       var imageObject = {};
       imageObject.image = $scope.catalogItem.Images[0].AlternateImages[i].image;
-      if (i <= NUM_VISIBLE_IMAGES) {
+      if (i < NUM_VISIBLE_IMAGES) {
         imageObject.i = i;
         imageObject.visible = true;
       } else {
@@ -43,15 +43,20 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
 
   // moves slides back or forth depending on parameter n (+1, -1)
   $scope.moveSlides = function(n) {
-    $scope.slides[slideIndex].visible = false;
-    if ((slideIndex + n) >= $scope.slides.length) {
-      slideIndex = 0;
-    } else if ((slideIndex + n) <= 0) {
-      slideIndex = $scope.slides.length - 1;
-    } else {
-      slideIndex += n;
+    if (n == 1) {
+      $scope.slides[slideIndex].visible = false;
+
+      if ((slideIndex + NUM_VISIBLE_IMAGES + n) >= $scope.slides.length) {
+        slideIndex = 0;
+      } else if ((slideIndex + n) <= 0) {
+        slideIndex = $scope.slides.length - 1;
+      } else {
+        slideIndex += n;
+      }
+
+      $scope.slides[slideIndex + NUM_VISIBLE_IMAGES].visible = true;
     }
-    $scope.slides[slideIndex].visible = true;
+
   }
 
 }]);

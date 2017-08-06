@@ -1,14 +1,11 @@
-
-#primaryImage {
+.sectionContainer {
   width: 100%;
-  height: auto;
+  padding-top: 20px;
 }
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+#primaryImage {
+  width: 80%;
+  height: auto%;
 }
 
 .visible {
@@ -23,33 +20,38 @@
 .prev, .next {
   color: gray;
   font-weight: 200;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .prev:focus {
-    outline: none;
-    border: 0;
+  outline: none;
+  border: 0;
 }
 
 .next:focus {
-    outline: none;
-    border: 0;
+  outline: none;
+  border: 0;
 }
 
+.material-icons.md-18 {
+  font-size: 18px;
+}
 
 .md-button.pickUpBtn {
-    color: white !important;
-    background-color: black !important;
-    font-weight: 300 !important;
+  color: white !important;
+  background-color: black !important;
+  font-weight: 300 !important;
 }
 
 .md-button.addToCartBtn {
-    color: white !important;
-    background-color: rgb(204,0,0) !important;
-    font-weight: 300 !important;
+  color: white !important;
+  background-color: rgb(204,0,0) !important;
+  font-weight: 300 !important;
 }
 
 .md-button.secondaryActionsBtn {
-    color: black !important;
-    background-color: rgb(243,243,243) !important;
-    font-weight: 300 !important;
+  color: black !important;
+  background-color: rgb(243,243,243) !important;
+  font-weight: 300 !important;
 }
