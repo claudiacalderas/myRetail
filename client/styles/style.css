@@ -3,6 +3,10 @@
   padding-top: 20px;
 }
 
+.reviewsContainer {
+  background-color: rgb(243,243,243);
+}
+
 #primaryImage {
   width: 80%;
   height: auto%;
@@ -36,6 +40,10 @@
 
 .material-icons.md-18 {
   font-size: 18px;
+}
+
+.material-icons.md-12 {
+  font-size: 12px;
 }
 
 .md-button.pickUpBtn {

@@ -30,18 +30,41 @@
       <!-- REVIEWS -->
       <div class="sectionContainer" layout="row">
         <div flex="40" layout-align="start end">
-          <span class="material-icons md-18">star</span>
-          <span class="material-icons md-18">star</span>
-          <span class="material-icons md-18">star</span>
-          <span class="material-icons md-18">star</span>
-          <span class="material-icons md-18">star</span>
+          <span class="material-icons md-18">star star star star star</span>
           <span>overall</span>
         </div>
-        <div flex="10"></div>
+        <div flex="20"></div>
         <div flex="40" layout-align="end end">
           <span>view all {{catalogItem.CustomerReview[0].Reviews.length}} reviews</span>
         </div>
       </div>
+      <div layout="column">
+        <div class="sectionContainer reviewsContainer" layout="row">
+          <div flex="50" layout="column">
+            <span>PRO</span>
+            <span>most helpful 4-5 star review</span>
+          </div>
+          <div flex="50" layout="column">
+            <span>CON</span>
+            <span>most helpful 1-2 star review</span>
+          </div>
+        </div>
+
+        <div class="sectionContainer reviewsContainer" layout="row">
+          <div flex="50" layout="column">
+            <span class="material-icons md-12">star star star star star</span>
+            <span>{{catalogItem.CustomerReview[0].Pro[0].title}}</span>
+            <span>{{catalogItem.CustomerReview[0].Pro[0].review}}</span>
+          </div>
+          <div flex="50" layout="column">
+            <span class="material-icons md-12">star star star star star</span>
+            <span>{{catalogItem.CustomerReview[0].Con[0].title}}</span>
+            <span>{{catalogItem.CustomerReview[0].Con[0].review}}</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
     <div layout="column" flex="10"></div>
@@ -57,7 +80,7 @@
         </div>
       </div>
       <br>
-      
+
       <!-- PROMOTIONS -->
       <div class="sectionContainer">
         <div ng-repeat="promotion in catalogItem.Promotions">
