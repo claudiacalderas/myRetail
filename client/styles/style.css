@@ -1,4 +1,8 @@
 
+#primaryImage {
+  width: 100%;
+  height: auto;
+}
 
 .md-button.pickUpBtn {
     color: white !important;

@@ -5,9 +5,10 @@
       <!-- TITLE -->
       <span ng-bind-html="catalogItem.title"></span>
       <!-- PRIMARY IMAGE -->
-      <img ng-src="{{catalogItem.Images[0].PrimaryImage[0].image}}">
+      <img id="primaryImage" ng-src="{{catalogItem.Images[0].PrimaryImage[0].image}}">
       <!-- VIEW LARGER -->
       <!-- CAROUSEL -->
+      
       <!-- REVIEWS -->
 
 
@@ -51,14 +52,13 @@
       <div layout="row">
         <div layout="column" layout-align="center center">
           <md-button class="pickUpBtn md-raised" type="submit" name="pickUp" aria-label="Pick up in store" value="Pick Up" ng-click="">PICK UP IN STORE</md-button>
+          <!-- FIND IN A STORE -->
           <span>find in a store</span>
         </div>
         <div>
           <md-button class="addToCartBtn md-raised" type="submit" name="addToCart" aria-label="Add To Cart" value="Add To Cart" ng-click="">ADD TO CART</md-button>
         </div>
       </div>
-      <!-- FIND IN A STORE -->
-
       <!-- RETURNS -->
       <div layout="row">
         <div flex="20">
