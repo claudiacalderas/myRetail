@@ -12,6 +12,14 @@
   height: auto%;
 }
 
+.btnVisible {
+  display: block;
+}
+
+.btnInvisible {
+  display: none;
+}
+
 .visible {
   display: block;
 }

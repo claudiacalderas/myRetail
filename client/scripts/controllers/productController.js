@@ -3,15 +3,35 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
 
   // Number of visible images for carousel
   NUM_VISIBLE_IMAGES = 3;
-
   // Array of alternate images for carousel
   $scope.slides = [];
+  // variables to show/noshow addToCart and pickUp buttons
+  $scope.pickUpVisible = false;
+  $scope.addToCartVisible = false;
 
   // Calls Factory function that gets catalog information from the database
   DataService.getCatalogItem().then(function(data){
     // Using only one item in DB loaded from JSON file for this case study
     $scope.catalogItem = data.data[0].CatalogEntryView[0];
     console.log("CATALOG ITEM:", $scope.catalogItem);
+    // sets variables to show/noshow buttons depending on purchasingChannelCode value
+    switch (parseInt($scope.catalogItem.purchasingChannelCode)) {
+      case 0:
+        $scope.pickUpVisible = true;
+        $scope.addToCartVisible = true;
+        break;
+      case 1:
+        $scope.pickUpVisible = false;
+        $scope.addToCartVisible = true;
+        break;
+      case 2:
+        $scope.pickUpVisible = true;
+        $scope.addToCartVisible = false;
+        break;
+      default:
+        $scope.pickUpVisible = false;
+        $scope.addToCartVisible = false;
+    }
     // build array of alternate images for carousel
     buildArrayOfImages();
     console.log('$scope.slides', $scope.slides);
