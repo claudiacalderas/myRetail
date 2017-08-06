@@ -2,7 +2,7 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
                       function($scope, $http, DataService) {
 
   // Number of visible images for carousel
-  NUM_VISIBLE_IMAGES = 3;
+  NUM_VISIBLE_IMAGES = 2;
 
   // Array of alternate images for carousel
   $scope.slides = [];

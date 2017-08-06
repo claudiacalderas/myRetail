@@ -4,6 +4,38 @@
   height: auto;
 }
 
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}
+
+/* previous and next buttons */
+.prev, .next {
+  color: gray;
+  font-weight: 200;
+}
+
+.prev:focus {
+    outline: none;
+    border: 0;
+}
+
+.next:focus {
+    outline: none;
+    border: 0;
+}
+
+
 .md-button.pickUpBtn {
     color: white !important;
     background-color: black !important;

@@ -7,8 +7,16 @@
       <!-- PRIMARY IMAGE -->
       <img id="primaryImage" ng-src="{{catalogItem.Images[0].PrimaryImage[0].image}}">
       <!-- VIEW LARGER -->
-      <!-- CAROUSEL -->
       
+      <!-- CAROUSEL -->
+      <div class="slideshow-container" layout="row" layout-align="center center">
+        <div class="prev" ng-click="moveSlides(-1)">&#10094;</div>
+        <div ng-repeat="slide in slides">
+          <img ng-src="{{slide.image}}" ng-class="{visible: (slide.visible === true), invisible: (slide.visible === false)}" style="width:100%">
+        </div>
+        <div class="next" ng-click="moveSlides(1)">&#10095;</div>
+      </div>
+
       <!-- REVIEWS -->
 
 
