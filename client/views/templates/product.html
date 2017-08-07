@@ -127,14 +127,13 @@
       </div>
 
       <!-- RETURNS -->
-      <div class="sectionContainer" layout="row">
-        <div flex="20">
-          <span>returns</span>
+      <div class="sectionContainer" layout="row" layout-fill layout-align="start center">
+        <div class="returnsContainer" flex="15">
+          <span id="returnsTxt">returns</span>
         </div>
-        <div>
-          <!-- <span ng-bind-html="returnDescription"></span> -->
-          <span>This item must be returned within 30 days of the ship date. See
-          <!-- <a ng-href="{{catalogItem.ReturnPolicy[0].legalCopy}}">return policy</a> -->
+        <div class="disclaimerContainer" layout-fill flex="85">
+          <span id="disclaimerTxt">This item must be returned within 30 days of the ship date. See
+          <b>return policy</b>
           for details. Prices, promotions,styles and availability may vary by store
           and online</span>
         </div>
