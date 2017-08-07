@@ -88,6 +88,10 @@ h1 {
   color: rgb(204,204,204);
 }
 
+.magnifyBtn {
+  color: rgb(204,204,204);
+}
+
 .md-button.pickUpBtn {
   color: white !important;
   background-color: black !important;
@@ -148,4 +152,10 @@ h1 {
   font-size: 12px;
   padding-left: 5px;
   text-transform: lowercase;
+}
+
+#magnifyTxt {
+  font-size: 12px;
+  padding-left: 5px;
+  color: darkgray;
 }
