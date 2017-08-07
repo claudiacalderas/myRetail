@@ -82,10 +82,12 @@
       <br>
 
       <!-- PROMOTIONS -->
-      <div class="sectionContainer">
+      <div class="sectionContainer" layout="column">
+        <div class="line"></div>
         <div ng-repeat="promotion in catalogItem.Promotions">
-          <span>{{promotion.Description[0].shortDescription}}</span>
+          <img id="promoImg" src="views/images/promo_icon.png"><span id="promoTxt">{{promotion.Description[0].shortDescription}}</span>
         </div>
+        <div class="line"></div>
       </div>
 
       <!-- QUANTITY -->

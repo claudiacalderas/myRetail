@@ -20,12 +20,18 @@
 
 #primaryImage {
   width: 80%;
-  height: auto%;
+  height: auto;
 }
 
 #carouselImage:focus {
   outline: none;
 }
+
+#promoImg {
+  width: auto;
+  max-height: 10px;
+}
+
 
 .btnVisible {
   display: block;
@@ -101,6 +107,15 @@
   border: 2px solid white; /* Green */
 }
 
+.line {
+  flex-shrink: 1;
+  background-color: lightgray;
+  height: 1px;
+  position: relative;
+  margin-top: .45em;
+  margin-bottom: .45em;
+}
+
 #quantityTxt {
   font-size: 12px;
 }
@@ -108,4 +123,10 @@
 #quantityNumTxt {
   font-size: 18px;
   font-weight: bold;
+}
+
+#promoTxt {
+  color: rgb(204,0,0);
+  font-size: 12px;
+  padding-left: 5px;
 }
