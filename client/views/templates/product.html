@@ -19,7 +19,7 @@
       <!-- MAGNIFY -->
       <div class="sectionContainer" layout="row" layout-align="center center">
         <div>
-          <span class="material-icons md-14 magnifyBtn">zoom_in</span>
+          <span class="material-icons md-14 magnifyIcn">zoom_in</span>
         </div>
         <div>
           <span id="magnifyTxt">view larger</span>
@@ -107,9 +107,9 @@
             <span id="quantityTxt">&nbsp quantity:</span>
           </div>
           <div flex="50" layout="row" layout-align="end end" layout-fill>
-            <span class="material-icons md-14 quantityBtn">remove_circle</span>
+            <span class="material-icons md-14 quantityIcn">remove_circle</span>
             <span id="quantityNumTxt">&nbsp 1 &nbsp</span>
-            <span class="material-icons md-14 quantityBtn">add_circle</span>
+            <span class="material-icons md-14 quantityIcn">add_circle</span>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@
         <div layout="column" flex="50" layout-fill layout-align="center center">
           <md-button layout-fill class="pickUpBtn md-raised" type="submit" name="pickUp" aria-label="Pick up in store" value="Pick Up" ng-class="{btnVisible: (pickUpVisible === true), btnInvisible: (pickUpVisible === false)}" ng-click="">PICK UP IN STORE</md-button>
           <!-- FIND IN A STORE -->
-          <span>find in a store</span>
+          <span id="findInStoreTxt">find in a store</span>
         </div>
         <div flex="50" layout-fill>
           <md-button layout-fill class="addToCartBtn md-raised" type="submit" name="addToCart" aria-label="Add To Cart" value="Add To Cart" ng-class="{btnVisible: (addToCartVisible === true), btnInvisible: (addToCartVisible === false)}" ng-click="">ADD TO CART</md-button>
