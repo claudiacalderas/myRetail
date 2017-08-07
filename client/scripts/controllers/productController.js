@@ -3,9 +3,7 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
 
   // Number of visible images for carousel
   NUM_VISIBLE_IMAGES = 3;
-  // Array of alternate images for carousel
-  $scope.slides = [];
-  // array of alternate images displayed
+  // array of indexes of alternate images displayed
   $scope.arrayOfVisibleSlides = [];
   for (var i = 0; i < NUM_VISIBLE_IMAGES; i++) {
     $scope.arrayOfVisibleSlides.push(i);
@@ -42,9 +40,8 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
         $scope.addToCartVisible = false;
     }
     // build array of alternate images for carousel
-    $scope.slides = $scope.catalogItem.Images[0].AlternateImages;
-    numOfAlternateImages = $scope.slides.length;
-    console.log('$scope.slides', $scope.slides);
+    numOfAlternateImages = $scope.catalogItem.Images[0].AlternateImages.length;
+    console.log('Alternate images:', $scope.catalogItem.Images[0].AlternateImages);
   })
   .catch(function(response){
       console.log(response.status);
