@@ -12,6 +12,10 @@
   height: auto%;
 }
 
+#carouselImage:focus {
+  outline: none;
+}
+
 .btnVisible {
   display: block;
 }

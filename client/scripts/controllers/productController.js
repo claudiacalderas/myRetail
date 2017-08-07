@@ -15,12 +15,17 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
   $scope.pickUpVisible = false;
   $scope.addToCartVisible = false;
 
+  // Primary Image URL
+  $scope.primaryImageURL;
+
 
   // Calls Factory function that gets catalog information from the database
   DataService.getCatalogItem().then(function(data){
     // Using only one item in DB loaded from JSON file for this case study
     $scope.catalogItem = data.data[0].CatalogEntryView[0];
     console.log("CATALOG ITEM:", $scope.catalogItem);
+    // sets value of primaryImage
+    $scope.primaryImageURL = $scope.catalogItem.Images[0].PrimaryImage[0].image;
     // sets variables to show/noshow buttons depending on purchasingChannelCode value
     switch (parseInt($scope.catalogItem.purchasingChannelCode)) {
       case 0:
@@ -78,6 +83,11 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
         console.log('2: arreglo es:', $scope.arrayOfVisibleSlides);
       }
     }
+  }
+
+  // changes primaryImage
+  $scope.changePrimaryImage = function(imageURL) {
+    $scope.primaryImageURL = imageURL;
   }
 
 }]);

@@ -9,7 +9,7 @@
 
       <!-- PRIMARY IMAGE -->
       <div class="sectionContainer" layout-align="center center">
-        <img id="primaryImage" ng-src="{{catalogItem.Images[0].PrimaryImage[0].image}}">
+        <img id="primaryImage" ng-src="{{primaryImageURL}}">
       </div>
 
       <!-- VIEW LARGER -->
@@ -20,7 +20,7 @@
         <div flex="60" layout="row" layout-align="center center">
           <div class="prev" ng-click="moveSlides(-1)">&#10094;</div>
           <div ng-repeat="index in arrayOfVisibleSlides">
-            <img ng-src="{{catalogItem.Images[0].AlternateImages[index].image}}" style="width:100%">
+            <img id="carouselImage" ng-src="{{catalogItem.Images[0].AlternateImages[index].image}}" style="width:100%" ng-click="changePrimaryImage(catalogItem.Images[0].AlternateImages[index].image)">
           </div>
           <div class="next" ng-click="moveSlides(1)">&#10095;</div>
         </div>
