@@ -1,14 +1,14 @@
 <div layout="row" class="pageContent">
-  <div layout="column" flex="10"></div>
-  <div layout="row" flex="80">
-    <div layout="column" flex="40">
+  <div layout="column" flex="10" style="background-color:powderblue;"></div>
+  <div layout="row" flex="90" layout-align="center start">
+    <div layout="column" flex="45">
       <!-- TITLE -->
       <div class="sectionContainer">
         <span ng-bind-html="catalogItem.title"></span>
       </div>
 
       <!-- PRIMARY IMAGE -->
-      <div class="sectionContainer" layout-align="center center">
+      <div class="sectionContainer" style="text-align:center;">
         <img id="primaryImage" ng-src="{{primaryImageURL}}">
       </div>
 
@@ -67,9 +67,9 @@
 
     </div>
 
-    <div layout="column" flex="10"></div>
+    <div layout="column" flex="5" style="background-color:powderblue;"></div>
 
-    <div layout="column" flex="40">
+    <div layout="column" flex="45">
       <!-- PRICE -->
       <div class="sectionContainer" layout="row">
         <div>
@@ -156,5 +156,5 @@
     </div>
   </div>
 
-  <div layout="column" flex="10"></div>
+  <div layout="column" flex="10" style="background-color:powderblue;"></div>
 </div>
