@@ -3,8 +3,12 @@
   <div layout="row" flex="90" layout-align="center start">
     <div layout="column" flex="45">
       <!-- TITLE -->
-      <div class="sectionContainer">
-        <span ng-bind-html="catalogItem.title"></span>
+      <div class="sectionContainer" layout="row">
+        <div flex="10"></div>
+        <div class="titleContainer" flex="80" >
+          <h1 layout-align"center center" ng-bind-html="catalogItem.title"></h1>
+        </div>
+        <div flex="10"></div>
       </div>
 
       <!-- PRIMARY IMAGE -->
@@ -78,7 +82,6 @@
           <span id="priceTextTxt">{{catalogItem.Offers[0].OfferPrice[0].priceQualifier}}</span>
         </div>
       </div>
-      <br>
 
       <!-- PROMOTIONS -->
       <div class="sectionContainer" layout="column">
