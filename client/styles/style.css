@@ -29,6 +29,7 @@ span:focus {
 }
 
 .reviewsContainer {
+  padding: 10px;
   background-color: rgb(243,243,243);
 }
 
@@ -98,6 +99,18 @@ span:focus {
   color: rgb(204,204,204);
 }
 
+.starIcn {
+  font-size: 20px;
+  letter-spacing: -3px;
+  color: rgb(204,204,204);
+}
+
+.starIcnSm {
+  font-size: 12px;
+  letter-spacing: -1px;
+  color: rgb(204,204,204);
+}
+
 .md-button.pickUpBtn {
   color: white !important;
   background-color: black !important;
@@ -129,6 +142,15 @@ span:focus {
   flex-shrink: 1;
   background-color: lightgray;
   height: 1px;
+  position: relative;
+  margin-top: .45em;
+  margin-bottom: .45em;
+}
+
+.reviewsLine {
+  flex-shrink: 1;
+  background-color: lightgray;
+  height: 0.5px;
   position: relative;
   margin-top: .45em;
   margin-bottom: .45em;
@@ -191,4 +213,43 @@ span:focus {
 #disclaimerTxt {
   font-size: 10px;
   color: rgb(102,102,102);
+}
+
+#overallTxt, #viewAllReviewsTxt{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#proConTxt {
+  font-size: 14px;
+}
+
+#mostHelpfulTxt {
+  font-size: 12px;
+  font-weight: normal;
+  padding-top: 5px;
+}
+
+#reviewTitleTxt {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#reviewTxt {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+#screenNameTxt {
+  padding-top: 5px;
+  font-size: 10px;
+  font-weight: normal;
+  color: blue;
+}
+
+#dateTxt {
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 10px;
+  font-weight: normal;
 }

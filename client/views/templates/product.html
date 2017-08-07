@@ -42,36 +42,48 @@
       <!-- REVIEWS -->
       <div class="sectionContainer" layout="row">
         <div flex="40" layout-align="start end">
-          <span class="material-icons md-18">star star star star star</span>
-          <span>overall</span>
+          <span class="material-icons md-14 starIcn">star star star star star</span>
+        </div>
+        <div>
+          <span id="overallTxt">overall</span>
         </div>
         <div flex="20"></div>
         <div flex="40" layout-align="end end">
-          <span>view all {{catalogItem.CustomerReview[0].Reviews.length}} reviews</span>
+          <span id="viewAllReviewsTxt">view all {{catalogItem.CustomerReview[0].Reviews.length}} reviews</span>
         </div>
       </div>
-      <div layout="column">
-        <div class="sectionContainer reviewsContainer" layout="row">
-          <div flex="50" layout="column">
-            <span>PRO</span>
-            <span>most helpful 4-5 star review</span>
+      <div layout="column" class="reviewsContainer">
+        <div class="reviewsContainer" layout="row">
+          <div flex="45" layout="column">
+            <span id="proConTxt">PRO</span>
+            <span id="mostHelpfulTxt">most helpful 4-5 star review</span>
           </div>
-          <div flex="50" layout="column">
-            <span>CON</span>
-            <span>most helpful 1-2 star review</span>
+          <div flex="10"></div>
+          <div flex="45" layout="column">
+            <span id="proConTxt">CON</span>
+            <span id="mostHelpfulTxt">most helpful 1-2 star review</span>
           </div>
         </div>
-
-        <div class="sectionContainer reviewsContainer" layout="row">
-          <div flex="50" layout="column">
-            <span class="material-icons md-12">star star star star star</span>
-            <span>{{catalogItem.CustomerReview[0].Pro[0].title}}</span>
-            <span>{{catalogItem.CustomerReview[0].Pro[0].review}}</span>
+        <div class="reviewsLine"></div>
+        <div class="reviewsContainer" layout="row">
+          <div flex="45" layout="column">
+            <span class="material-icons md-12 starIcnSm">star star star star star</span>
+            <span id="reviewTitleTxt">{{catalogItem.CustomerReview[0].Pro[0].title}}</span>
+            <span id="reviewTxt">{{catalogItem.CustomerReview[0].Pro[0].review}}</span>
+            <div layout="row">
+              <span id="screenNameTxt">{{catalogItem.CustomerReview[0].Pro[0].screenName}}</span>
+              <span id="dateTxt" ng-bind="getDate(catalogItem.CustomerReview[0].Pro[0].datePosted)"></span>
+            </div>
           </div>
-          <div flex="50" layout="column">
-            <span class="material-icons md-12">star star star star star</span>
-            <span>{{catalogItem.CustomerReview[0].Con[0].title}}</span>
-            <span>{{catalogItem.CustomerReview[0].Con[0].review}}</span>
+          <div flex="10"></div>
+          <div flex="45" layout="column">
+            <span class="material-icons md-10 starIcnSm">star star star star star</span>
+            <span id="reviewTitleTxt">{{catalogItem.CustomerReview[0].Con[0].title}}</span>
+            <span id="reviewTxt">{{catalogItem.CustomerReview[0].Con[0].review}}</span>
+            <div layout="row">
+              <span id="screenNameTxt">{{catalogItem.CustomerReview[0].Con[0].screenName}}</span>
+              <span id="dateTxt" ng-bind="getDate(catalogItem.CustomerReview[0].Con[0].datePosted)"></span>
+            </div>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
-myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
-                      function($scope, $http, DataService) {
+myRetailApp.controller('ProductController', ['$scope','$http', 'DataService', 'Utilities',
+                      function($scope, $http, DataService, Utilities) {
 
   // Number of visible images for carousel
   NUM_VISIBLE_IMAGES = 3;
@@ -14,10 +14,10 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
   // variables to show/noshow addToCart and pickUp buttons
   $scope.pickUpVisible = false;
   $scope.addToCartVisible = false;
-
   // Primary Image URL
   $scope.primaryImageURL;
-
+  // Date format function from Utilities factory
+  $scope.getDate = Utilities.getDate;
 
   // Calls Factory function that gets catalog information from the database
   DataService.getCatalogItem().then(function(data){
@@ -82,5 +82,6 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
   $scope.changePrimaryImage = function(imageURL) {
     $scope.primaryImageURL = imageURL;
   }
+
 
 }]);
