@@ -170,3 +170,14 @@ span:focus {
   font-weight: bold;
   padding-top: 5px;
 }
+
+#highlightsTxt {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+#featureTxt {
+  font-size: 12px;
+  font-weight: normal;
+  padding-top: 5px;
+}

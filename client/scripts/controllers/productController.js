@@ -44,9 +44,8 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
         $scope.pickUpVisible = false;
         $scope.addToCartVisible = false;
     }
-    // build array of alternate images for carousel
+    // save number of alternate images in a variable for carousel functionality
     numOfAlternateImages = $scope.catalogItem.Images[0].AlternateImages.length;
-    console.log('Alternate images:', $scope.catalogItem.Images[0].AlternateImages);
   })
   .catch(function(response){
       console.log(response.status);
@@ -58,29 +57,23 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService',
       // Right arrow clicked
       // evaluates if last image displayed is the last one and in that case
       // circles to the first image of the array
-      console.log('comparando:',$scope.arrayOfVisibleSlides[NUM_VISIBLE_IMAGES - 1], (numOfAlternateImages - 1));
       if ($scope.arrayOfVisibleSlides[NUM_VISIBLE_IMAGES - 1] == (numOfAlternateImages - 1)) {
         $scope.arrayOfVisibleSlides.shift();
         $scope.arrayOfVisibleSlides.push(0);
-        console.log('1: arreglo es:', $scope.arrayOfVisibleSlides);
       } else {
         $scope.arrayOfVisibleSlides.shift();
         $scope.arrayOfVisibleSlides.push($scope.arrayOfVisibleSlides[$scope.arrayOfVisibleSlides.length - 1] + 1);
-        console.log('2: arreglo es:', $scope.arrayOfVisibleSlides);
       }
     } else {
       // Left arrow clicked
       // evaluates if first image displayed is the last one and in that case
       // circles to the last image of the array
-      console.log('comparando:',$scope.arrayOfVisibleSlides[NUM_VISIBLE_IMAGES - 1], (numOfAlternateImages - 1));
       if ($scope.arrayOfVisibleSlides[0] == 0) {
         $scope.arrayOfVisibleSlides.pop();
         $scope.arrayOfVisibleSlides.unshift(numOfAlternateImages - 1);
-        console.log('1: arreglo es:', $scope.arrayOfVisibleSlides);
       } else {
         $scope.arrayOfVisibleSlides.pop();
         $scope.arrayOfVisibleSlides.unshift($scope.arrayOfVisibleSlides[0] - 1);
-        console.log('2: arreglo es:', $scope.arrayOfVisibleSlides);
       }
     }
   }

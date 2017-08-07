@@ -155,11 +155,11 @@
 
       <!-- PRODUCT HIGHLIGHTS -->
       <div class="sectionContainer">
-        <span>product highlights</span>
+        <span id="highlightsTxt">product highlights</span>
         <br>
         <br>
         <div ng-repeat="feature in catalogItem.ItemDescription[0].features">
-          <span ng-bind-html="feature"></span>
+          <li id="featureTxt" ng-bind-html="feature"></li>
         </div>
       </div>
 
