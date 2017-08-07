@@ -66,17 +66,16 @@
       </div>
 
     </div>
-
     <div layout="column" flex="5"></div>
-
     <div layout="column" flex="45">
+
       <!-- PRICE -->
       <div class="sectionContainer" layout="row">
         <div>
-          <span>{{catalogItem.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
+          <span id="priceTxt">{{catalogItem.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
         </div>
-        <div>
-          <span>{{catalogItem.Offers[0].OfferPrice[0].priceQualifier}}</span>
+        <div class="priceTextContainer">
+          <span id="priceTextTxt">{{catalogItem.Offers[0].OfferPrice[0].priceQualifier}}</span>
         </div>
       </div>
       <br>
