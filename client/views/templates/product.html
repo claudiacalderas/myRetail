@@ -1,5 +1,5 @@
 <div layout="row" class="pageContent">
-  <div layout="column" flex="10" style="background-color:powderblue;"></div>
+  <div layout="column" flex="10"></div>
   <div layout="row" flex="90" layout-align="center start">
     <div layout="column" flex="45">
       <!-- TITLE -->
@@ -67,7 +67,7 @@
 
     </div>
 
-    <div layout="column" flex="5" style="background-color:powderblue;"></div>
+    <div layout="column" flex="5"></div>
 
     <div layout="column" flex="45">
       <!-- PRICE -->
@@ -89,18 +89,16 @@
       </div>
 
       <!-- QUANTITY -->
-      <div class="sectionContainer" layout="row">
-        <div>
-          <span>quantity:</span>
-        </div>
-        <div>
-          <span>-</span>
-        </div>
-        <div>
-          <span>1</span>
-        </div>
-        <div>
-          <span>+</span>
+      <div layout="row">
+        <div class="quantityContainer" flex="50" layout="row">
+          <div layout-fill>
+            <span id="quantityTxt">&nbsp quantity:</span>
+          </div>
+          <div flex="50" layout="row" layout-align="end end" layout-fill>
+            <span class="material-icons md-14 quantityBtn">remove_circle</span>
+            <span id="quantityNumTxt">&nbsp 1 &nbsp</span>
+            <span class="material-icons md-14 quantityBtn">add_circle</span>
+          </div>
         </div>
       </div>
 
@@ -111,7 +109,6 @@
           <!-- FIND IN A STORE -->
           <span>find in a store</span>
         </div>
-        <!-- <div flex="1" layout-fill style="background-color:powderblue;"></div> -->
         <div flex="50" layout-fill>
           <md-button layout-fill class="addToCartBtn md-raised" type="submit" name="addToCart" aria-label="Add To Cart" value="Add To Cart" ng-class="{btnVisible: (addToCartVisible === true), btnInvisible: (addToCartVisible === false)}" ng-click="">ADD TO CART</md-button>
         </div>
@@ -157,5 +154,5 @@
     </div>
   </div>
 
-  <div layout="column" flex="10" style="background-color:powderblue;"></div>
+  <div layout="column" flex="10"></div>
 </div>

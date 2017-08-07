@@ -1,11 +1,21 @@
+.body {
+  font-family: serif;
+}
+
 .sectionContainer {
   width: 100%;
-  padding-top: 20px;
-  background-color: yellow;
+  margin-top: 20px;
 }
 
 .reviewsContainer {
   background-color: rgb(243,243,243);
+}
+
+.quantityContainer {
+  margin-top: 20px;
+  padding: 5px;
+  border: 1px solid rgb(204,204,204);
+  border-radius: 3px;
 }
 
 #primaryImage {
@@ -59,6 +69,10 @@
   font-size: 12px;
 }
 
+.quantityBtn {
+  color: rgb(204,204,204);
+}
+
 .md-button.pickUpBtn {
   color: white !important;
   background-color: black !important;
@@ -85,4 +99,13 @@
   font-weight: 300 !important;
   font-size: 10px;
   border: 2px solid white; /* Green */
+}
+
+#quantityTxt {
+  font-size: 12px;
+}
+
+#quantityNumTxt {
+  font-size: 18px;
+  font-weight: bold;
 }
