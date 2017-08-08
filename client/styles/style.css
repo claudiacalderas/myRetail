@@ -51,6 +51,10 @@ span:focus {
   padding-left: 10px;
 }
 
+.starsContainer {
+  display: inline-block;
+}
+
 #primaryImage {
   width: 80%;
   height: auto;
@@ -103,6 +107,10 @@ span:focus {
   font-size: 20px;
   letter-spacing: -3px;
   color: rgb(204,204,204);
+}
+
+.redStar {
+  color: rgb(204,0,0);
 }
 
 .starIcnSm {

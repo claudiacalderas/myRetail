@@ -41,8 +41,10 @@
 
       <!-- REVIEWS -->
       <div class="sectionContainer" layout="row">
-        <div flex="40" layout-align="start end">
-          <span class="material-icons md-14 starIcn">star star star star star</span>
+        <div flex="40" layout-align="start end" layout="row">
+          <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+            <span class="material-icons md-14 starIcn" ng-class="{redStar: star<=catalogItem.CustomerReview[0].consolidatedOverallRating}">star</span>
+          </div>
         </div>
         <div>
           <span id="overallTxt">overall</span>
@@ -68,20 +70,20 @@
         <div class="reviewsContainer" layout="row">
           <div flex="45" layout="column">
             <span class="material-icons md-12 starIcnSm">star star star star star</span>
-            <span id="reviewTitleTxt">{{catalogItem.CustomerReview[0].Pro[0].title}}</span>
-            <span id="reviewTxt">{{catalogItem.CustomerReview[0].Pro[0].review}}</span>
+            <span id="reviewTitleTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].title"></span>
+            <span id="reviewTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].review"></span>
             <div layout="row">
-              <span id="screenNameTxt">{{catalogItem.CustomerReview[0].Pro[0].screenName}}</span>
+              <span id="screenNameTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].screenName"></span>
               <span id="dateTxt" ng-bind="getDate(catalogItem.CustomerReview[0].Pro[0].datePosted)"></span>
             </div>
           </div>
           <div flex="10"></div>
           <div flex="45" layout="column">
             <span class="material-icons md-10 starIcnSm">star star star star star</span>
-            <span id="reviewTitleTxt">{{catalogItem.CustomerReview[0].Con[0].title}}</span>
-            <span id="reviewTxt">{{catalogItem.CustomerReview[0].Con[0].review}}</span>
+            <span id="reviewTitleTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].title"></span>
+            <span id="reviewTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].review"></span>
             <div layout="row">
-              <span id="screenNameTxt">{{catalogItem.CustomerReview[0].Con[0].screenName}}</span>
+              <span id="screenNameTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].screenName"></span>
               <span id="dateTxt" ng-bind="getDate(catalogItem.CustomerReview[0].Con[0].datePosted)"></span>
             </div>
           </div>

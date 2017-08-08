@@ -11,6 +11,9 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService', 'U
   // number of Alternate Images available
   var numOfAlternateImages;
 
+  // number of stars for ratings
+  $scope.numberOfStars = [1,2,3,4,5];
+
   // variables to show/noshow addToCart and pickUp buttons
   $scope.pickUpVisible = false;
   $scope.addToCartVisible = false;
@@ -82,6 +85,5 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService', 'U
   $scope.changePrimaryImage = function(imageURL) {
     $scope.primaryImageURL = imageURL;
   }
-
 
 }]);
