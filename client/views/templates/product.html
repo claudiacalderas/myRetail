@@ -69,7 +69,11 @@
         <div class="reviewsLine"></div>
         <div class="reviewsContainer" layout="row">
           <div flex="45" layout="column">
-            <span class="material-icons md-12 starIcnSm">star star star star star</span>
+            <div layout-align="start end" layout="row">
+              <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+                <span class="material-icons md-10 starIcnSm" ng-class="{redStar: star<=catalogItem.CustomerReview[0].Pro[0].overallRating}">star</span>
+              </div>
+            </div>
             <span id="reviewTitleTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].title"></span>
             <span id="reviewTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].review"></span>
             <div layout="row">
@@ -79,7 +83,11 @@
           </div>
           <div flex="10"></div>
           <div flex="45" layout="column">
-            <span class="material-icons md-10 starIcnSm">star star star star star</span>
+            <div layout-align="start end" layout="row">
+              <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+                <span class="material-icons md-10 starIcnSm" ng-class="{redStar: star <= catalogItem.CustomerReview[0].Con[0].overallRating}">star</span>
+              </div>
+            </div>
             <span id="reviewTitleTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].title"></span>
             <span id="reviewTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].review"></span>
             <div layout="row">

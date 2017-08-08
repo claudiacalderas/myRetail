@@ -109,14 +109,14 @@ span:focus {
   color: rgb(204,204,204);
 }
 
-.redStar {
-  color: rgb(204,0,0);
-}
-
 .starIcnSm {
   font-size: 12px;
   letter-spacing: -1px;
   color: rgb(204,204,204);
+}
+
+.redStar {
+  color: rgb(204,0,0);
 }
 
 .md-button.pickUpBtn {
