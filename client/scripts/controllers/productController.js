@@ -3,6 +3,8 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService', 'U
 
   // Number of visible images for carousel
   NUM_VISIBLE_IMAGES = 3;
+  // quantity max value
+  QUANTITY_MAX = 20;
   // array of indexes of alternate images displayed
   $scope.arrayOfVisibleSlides = [];
   for (var i = 0; i < NUM_VISIBLE_IMAGES; i++) {
@@ -10,10 +12,10 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService', 'U
   }
   // number of Alternate Images available
   var numOfAlternateImages;
-
   // number of stars for ratings
   $scope.numberOfStars = [1,2,3,4,5];
-
+  // quantity max value
+  $scope.quantity = 1;
   // variables to show/noshow addToCart and pickUp buttons
   $scope.pickUpVisible = false;
   $scope.addToCartVisible = false;
@@ -84,6 +86,20 @@ myRetailApp.controller('ProductController', ['$scope','$http', 'DataService', 'U
   // changes primaryImage
   $scope.changePrimaryImage = function(imageURL) {
     $scope.primaryImageURL = imageURL;
+  }
+
+  // increases quantity by 1
+  $scope.addQuantity = function() {
+    if($scope.quantity < QUANTITY_MAX) {
+      $scope.quantity++;
+    }
+  }
+
+  // decreases quantity by 1
+  $scope.removeQuantity = function() {
+    if($scope.quantity > 1) {
+      $scope.quantity--;
+    }
   }
 
 }]);

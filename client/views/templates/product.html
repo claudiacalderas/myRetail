@@ -96,7 +96,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
     </div>
@@ -126,12 +125,12 @@
       <div layout="row">
         <div class="quantityContainer" flex="50" layout="row">
           <div layout-fill>
-            <span id="quantityTxt">&nbsp quantity:</span>
+            <span id="quantityTxt">quantity:</span>
           </div>
           <div flex="50" layout="row" layout-align="end end" layout-fill>
-            <span class="material-icons md-14 quantityIcn">remove_circle</span>
-            <span id="quantityNumTxt">&nbsp 1 &nbsp</span>
-            <span class="material-icons md-14 quantityIcn">add_circle</span>
+            <span class="material-icons md-14 quantityIcn" ng-click="removeQuantity()">remove_circle</span>
+            <span id="quantityNumTxt">{{quantity}}</span>
+            <span class="material-icons md-14 quantityIcn" ng-click="addQuantity()">add_circle</span>
           </div>
         </div>
       </div>

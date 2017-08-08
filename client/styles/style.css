@@ -166,11 +166,14 @@ span:focus {
 
 #quantityTxt {
   font-size: 12px;
+  padding-left: 5px;
 }
 
 #quantityNumTxt {
   font-size: 18px;
   font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #promoTxt {
