@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-// Item in Art Portfolio Schema
+// Catalog Schema
 var CatalogSchema = mongoose.Schema({
   CatalogEntryView : []
 });
