@@ -1,4 +1,4 @@
-myRetailApp.controller('ProductController', ['$scope','$http', 'DataService', 'Utilities',
+myRetailApp.controller('ProductController', ['$scope','$http','DataService','Utilities',
                       function($scope, $http, DataService, Utilities) {
 
   // Number of visible images for carousel
