@@ -125,6 +125,7 @@ span:focus {
   font-weight: 300 !important;
   margin-right: 5px;
   margin-left: 5px;
+  width: 100%
 }
 
 .md-button.addToCartBtn {
@@ -133,6 +134,7 @@ span:focus {
   font-weight: 300 !important;
   margin-left: 5px;
   margin-right: 5px;
+  width: 100%
 }
 
 .md-button.secondaryActionsBtn {
