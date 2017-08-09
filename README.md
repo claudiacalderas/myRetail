@@ -81,7 +81,7 @@ To launch the application's tests, run:
 
 ## Deployment
 
-The app has been deployed to Heroku using database service mLab.
+The app has been deployed to Heroku using database service mLab. It can be found [here](https://myretailapp.herokuapp.com)
 
 The following approach was used:
 
