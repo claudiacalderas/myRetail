@@ -14,7 +14,7 @@ myRetailApp.controller('ProductController', ['$scope','$http','$routeParams','Da
   var numOfAlternateImages;
   // number of stars for ratings
   $scope.numberOfStars = [1,2,3,4,5];
-  // quantity max value
+  // quantity value
   $scope.quantity = 1;
   // variables to show/noshow addToCart and pickUp buttons
   $scope.pickUpVisible = false;
