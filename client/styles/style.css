@@ -1,0 +1,296 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+main {
+  background-color: white;
+}
+
+h1 {
+	font-size: 20px;
+	font-weight: normal;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+span:focus {
+    outline: none;
+    border: 0;
+ }
+
+/* CONTAINERS */
+.sectionContainer {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.imageContainer {
+  text-align: center;
+}
+
+.titleContainer {
+  display: table;
+}
+
+.reviewsContainer {
+  padding: 10px;
+  background-color: rgb(243,243,243);
+}
+
+.quantityContainer {
+  margin-top: 20px;
+  padding: 5px;
+  border: 1px solid rgb(204,204,204);
+  border-radius: 3px;
+}
+
+.priceTextContainer {
+  padding-bottom: 2px;
+  display:flex;
+  align-items:flex-end;
+}
+
+.disclaimerContainer {
+  border-left: 1px solid rgb(204,204,204);
+  padding-left: 10px;
+}
+
+.starsContainer {
+  display: inline-block;
+}
+
+/* IMAGES */
+#primaryImage {
+  width: 80%;
+  height: auto;
+}
+
+#carouselImage {
+  width: 100%;
+}
+
+#carouselImage:focus {
+  outline: none;
+}
+
+#promoImg {
+  width: auto;
+  max-height: 10px;
+}
+
+/* CLASSES FOR BUTTONS DISPLAY */
+.btnVisible {
+  display: block;
+}
+
+.btnInvisible {
+  display: none;
+}
+
+/* CAROUSEL */
+.prev, .next {
+  color: gray;
+  font-weight: 200;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.prev:focus {
+  outline: none;
+  border: 0;
+}
+
+.next:focus {
+  outline: none;
+  border: 0;
+}
+
+/* ICONS */
+.quantityIcn {
+  color: rgb(204,204,204);
+}
+
+.magnifyIcn {
+  color: rgb(204,204,204);
+}
+
+.starIcn {
+  font-size: 20px;
+  letter-spacing: -3px;
+  color: rgb(204,204,204);
+}
+
+.starIcnSm {
+  font-size: 12px;
+  letter-spacing: -1px;
+  color: rgb(204,204,204);
+}
+
+.redStar {
+  color: rgb(204,0,0);
+}
+
+/* BUTTONS */
+.md-button.pickUpBtn {
+  color: white !important;
+  background-color: black !important;
+  font-weight: 300 !important;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 100%
+}
+
+.md-button.addToCartBtn {
+  color: white !important;
+  background-color: rgb(204,0,0) !important;
+  font-weight: 300 !important;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%
+}
+
+.md-button.secondaryActionsBtn {
+  color: black !important;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background-color: rgb(243,243,243) !important;
+  font-weight: 300 !important;
+  font-size: 10px;
+  border: 2px solid white;
+  width: 100%
+}
+
+/* LINES */
+.line {
+  flex-shrink: 1;
+  background-color: lightgray;
+  height: 1px;
+  position: relative;
+  margin-top: .45em;
+  margin-bottom: .45em;
+}
+
+.reviewsLine {
+  flex-shrink: 1;
+  background-color: lightgray;
+  height: 0.5px;
+  position: relative;
+  margin-top: .45em;
+  margin-bottom: .45em;
+}
+
+.reviewsLineSm {
+  flex-shrink: 1;
+  background-color: lightgray;
+  height: 1px;
+  position: relative;
+  margin-top: .45em;
+  margin-bottom: .45em;
+}
+
+/* TEXT */
+#quantityTxt {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+#quantityNumTxt {
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#promoTxt {
+  color: rgb(204,0,0);
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+#priceTxt {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#priceTextTxt {
+  font-size: 12px;
+  padding-left: 5px;
+  text-transform: lowercase;
+}
+
+#magnifyTxt {
+  font-size: 12px;
+  padding-left: 5px;
+  color: darkgray;
+}
+
+#findInStoreTxt {
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+#highlightsTxt {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+#featureTxt {
+  font-size: 12px;
+  font-weight: normal;
+  padding-top: 5px;
+}
+
+#returnsTxt {
+  font-size: 12px;
+  color: rgb(102,102,102);
+}
+
+#disclaimerTxt {
+  font-size: 10px;
+  color: rgb(102,102,102);
+}
+
+#overallTxt, #viewAllReviewsTxt{
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#proConTxt {
+  font-size: 14px;
+}
+
+#mostHelpfulTxt {
+  font-size: 12px;
+  font-weight: normal;
+  padding-top: 5px;
+}
+
+#reviewTitleTxt {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#reviewTxt {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+#screenNameTxt {
+  padding-top: 5px;
+  font-size: 10px;
+  font-weight: normal;
+  color: blue;
+}
+
+#dateTxt {
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 10px;
+  font-weight: normal;
+}

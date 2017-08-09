@@ -7,6 +7,4 @@ router.get('/', function(req,res){
     res.sendFile(path.resolve('server/public/views/index.html'));
 });
 
-// 404 HERE 
-
 module.exports = router;

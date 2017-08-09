@@ -1,0 +1,268 @@
+<div layout="row" class="pageContent">
+  <div layout="column" flex="10"></div>
+  <div ng-if="validData==true" layout-gt-md="row" layout-sm="column" flex="90" layout-align="center start">
+    <div layout="column" flex-lg="45" flex-xl="45" flex="100">
+
+      <!-- TITLE -->
+      <div class="sectionContainer" layout="row" flex-order-md="-20" flex-order-gt-md="1">
+        <div flex="10"></div>
+        <div class="titleContainer" flex="80" >
+          <h1 layout-align"center center" ng-bind-html="catalogItem.title"></h1>
+        </div>
+        <div flex="10"></div>
+      </div>
+
+      <!-- PRIMARY IMAGE -->
+      <div class="sectionContainer imageContainer" flex-order-md="-19" flex-order-gt-md="2">
+        <img id="primaryImage" ng-src="{{primaryImageURL}}">
+      </div>
+
+      <!-- MAGNIFY -->
+      <div class="sectionContainer" layout="row" layout-align="center center" flex-order-gt-md="3"  hide-md hide-sm hide-xs>
+        <div>
+          <span class="material-icons md-14 magnifyIcn">zoom_in</span>
+        </div>
+        <div>
+          <span id="magnifyTxt">view larger</span>
+        </div>
+      </div>
+
+      <!-- CAROUSEL -->
+      <div class="sectionContainer" layout="row" flex-order-md="-18" flex-order-gt-md="4">
+        <div flex="20"></div>
+        <div flex="60" layout="row" layout-align="center center">
+          <div class="prev" ng-click="moveSlides(-1)">&#10094;</div>
+          <div ng-repeat="index in arrayOfVisibleSlides">
+            <img id="carouselImage" ng-src="{{catalogItem.Images[0].AlternateImages[index].image}}" ng-click="changePrimaryImage(catalogItem.Images[0].AlternateImages[index].image)">
+          </div>
+          <div class="next" ng-click="moveSlides(1)">&#10095;</div>
+        </div>
+        <div flex="20"></div>
+      </div>
+
+      <!-- REVIEWS -->
+      <div class="sectionContainer" layout="column" hide-md hide-sm hide-xs flex-order-gt-md="5">
+        <div layout="row">
+          <div flex="40" layout-align="start center" layout="row">
+            <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+              <span class="material-icons md-14 starIcn" ng-class="{redStar: star<=catalogItem.CustomerReview[0].consolidatedOverallRating}">star</span>
+            </div>
+            <span id="overallTxt">overall</span>
+          </div>
+          <div flex="20"></div>
+          <div flex="40" layout="row" layout-align="end center">
+            <span id="viewAllReviewsTxt">view all {{catalogItem.CustomerReview[0].Reviews.length}} reviews</span>
+          </div>
+        </div>
+        <div layout="column" class="reviewsContainer">
+          <div class="reviewsContainer" layout="row">
+            <div flex="45" layout="column">
+              <span id="proConTxt">PRO</span>
+              <span id="mostHelpfulTxt">most helpful 4-5 star review</span>
+            </div>
+            <div flex="10"></div>
+            <div flex="45" layout="column">
+              <span id="proConTxt">CON</span>
+              <span id="mostHelpfulTxt">most helpful 1-2 star review</span>
+            </div>
+          </div>
+          <div class="reviewsLine"></div>
+          <div class="reviewsContainer" layout="row">
+            <div flex="45" layout="column">
+              <div layout-align="start end" layout="row">
+                <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+                  <span class="material-icons md-10 starIcnSm" ng-class="{redStar: star<=catalogItem.CustomerReview[0].Pro[0].overallRating}">star</span>
+                </div>
+              </div>
+              <span id="reviewTitleTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].title"></span>
+              <span id="reviewTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].review"></span>
+              <div layout="row">
+                <span id="screenNameTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].screenName"></span>
+                <span id="dateTxt" ng-bind="getDate(catalogItem.CustomerReview[0].Pro[0].datePosted)"></span>
+              </div>
+            </div>
+            <div flex="10"></div>
+            <div flex="45" layout="column">
+              <div layout-align="start end" layout="row">
+                <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+                  <span class="material-icons md-10 starIcnSm" ng-class="{redStar: star <= catalogItem.CustomerReview[0].Con[0].overallRating}">star</span>
+                </div>
+              </div>
+              <span id="reviewTitleTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].title"></span>
+              <span id="reviewTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].review"></span>
+              <div layout="row">
+                <span id="screenNameTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].screenName"></span>
+                <span id="dateTxt" ng-bind="getDate(catalogItem.CustomerReview[0].Con[0].datePosted)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div layout="column" flex-gt-md="5" hide-md hide-sm hide-xs></div>
+    <div layout="column" flex-lg="45" flex-xl="45" flex="100">
+
+
+      <!-- PRICE -->
+      <div class="sectionContainer" layout="row" flex-order-md="-17" flex-order-gt-md="6">
+        <div>
+          <span id="priceTxt">{{catalogItem.Offers[0].OfferPrice[0].formattedPriceValue}}</span>
+        </div>
+        <div class="priceTextContainer">
+          <span id="priceTextTxt">{{catalogItem.Offers[0].OfferPrice[0].priceQualifier}}</span>
+        </div>
+      </div>
+
+      <!-- PROMOTIONS -->
+      <div class="sectionContainer" layout="column" flex-order-md="-16" flex-order-gt-md="7">
+        <div class="line"></div>
+        <div ng-repeat="promotion in catalogItem.Promotions">
+          <img id="promoImg" src="views/images/promo_icon.png"><span id="promoTxt">{{promotion.Description[0].shortDescription}}</span>
+        </div>
+        <div class="line"></div>
+      </div>
+
+      <!-- QUANTITY -->
+      <div layout="row" flex-order-md="-16" flex-order-gt-md="8">
+        <div class="quantityContainer" flex="50" layout="row">
+          <div layout-fill>
+            <span id="quantityTxt">quantity:</span>
+          </div>
+          <div flex="50" layout="row" layout-align="end end" layout-fill>
+            <span id="minusIcon" class="material-icons md-14 quantityIcn" ng-click="removeQuantity()">remove_circle</span>
+            <span id="quantityNumTxt">{{quantity}}</span>
+            <span id="plusIcon" class="material-icons md-14 quantityIcn" ng-click="addQuantity()">add_circle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUTTONS (PICK UP IN STORE, ADD TO CART) -->
+      <div class="sectionContainer" layout="row" layout-align="center start" flex-order-md="-15" flex-order-gt-md="9">
+        <div layout="column" flex="50" layout-align="center center">
+          <md-button id="pickUpInStore" class="pickUpBtn md-raised" type="submit" name="pickUp" aria-label="Pick up in store" value="Pick Up" ng-class="{btnVisible: (pickUpVisible === true), btnInvisible: (pickUpVisible === false)}" ng-click="">PICK UP IN STORE</md-button>
+          <!-- FIND IN A STORE -->
+          <span id="findInStoreTxt">find in a store</span>
+        </div>
+        <div flex="50">
+          <md-button id="addToCart" class="addToCartBtn md-raised" type="submit" name="addToCart" aria-label="Add To Cart" value="Add To Cart" ng-class="{btnVisible: (addToCartVisible === true), btnInvisible: (addToCartVisible === false)}" ng-click="">ADD TO CART</md-button>
+        </div>
+      </div>
+
+      <!-- RETURNS -->
+      <div class="sectionContainer" layout="row" layout-align="start center" flex-order-md="-14" flex-order-gt-md="10">
+        <div class="returnsContainer" flex="15">
+          <span id="returnsTxt">returns</span>
+        </div>
+        <div class="disclaimerContainer" flex="85">
+          <span id="disclaimerTxt">This item must be returned within 30 days of the ship date. See
+          <b>return policy</b>
+          for details. Prices, promotions,styles and availability may vary by store
+          and online</span>
+        </div>
+      </div>
+
+      <!-- BUTTONS (ADD TO REGISTRY, ADD TO LIST, SHARE) -->
+      <div class="sectionContainer" layout="row" flex-order-md="-13" flex-order-gt-md="11">
+        <div flex="33">
+          <md-button class="secondaryActionsBtn" type="submit" name="addToRegistry" aria-label="Add to registry" value="Add to registry" ng-click="">ADD TO REGISTRY</md-button>
+        </div>
+        <div flex="33">
+          <md-button class="secondaryActionsBtn" type="submit" name="addToList" aria-label="Add to list" value="Add to list" ng-click="">ADD TO LIST</md-button>
+        </div>
+        <div flex="33">
+          <md-button class="secondaryActionsBtn" type="submit" name="share" aria-label="Share" value="Share" ng-click="">SHARE</md-button>
+        </div>
+      </div>
+
+      <!-- PRODUCT HIGHLIGHTS -->
+      <div class="sectionContainer" flex-order-md="-12" flex-order-gt-md="12">
+        <span id="highlightsTxt">product highlights</span>
+        <br>
+        <br>
+        <div ng-repeat="feature in catalogItem.ItemDescription[0].features">
+          <li id="featureTxt" ng-bind-html="feature"></li>
+        </div>
+        <br>
+      </div>
+
+      <!-- REVIEWS (SMALL SCREEN) -->
+      <div class="sectionContainer" layout="column" hide-gt-md flex-order-md="19" flex-order-md="19">
+        <div layout="row">
+          <div flex="40" layout-align="start center" layout="row">
+            <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+              <span class="material-icons md-14 starIcn" ng-class="{redStar: star<=catalogItem.CustomerReview[0].consolidatedOverallRating}">star</span>
+            </div>
+            <span id="overallTxt">overall</span>
+          </div>
+          <div flex="20"></div>
+          <div flex="40" layout="row" layout-align="end center">
+            <span id="viewAllReviewsTxt">view all {{catalogItem.CustomerReview[0].Reviews.length}} reviews</span>
+          </div>
+        </div>
+        <div layout="column" class="reviewsContainer">
+          <div class="reviewsContainer" layout="row">
+            <div flex="45" layout="column">
+              <span id="proConTxt">PRO</span>
+              <span id="mostHelpfulTxt">most helpful 4-5 star review</span>
+            </div>
+            <div flex="10"></div>
+            <div flex="45" layout="column">
+              <span id="proConTxt">CON</span>
+              <span id="mostHelpfulTxt">most helpful 1-2 star review</span>
+            </div>
+          </div>
+          <div class="reviewsLineSm" layout="row"></div>
+          <div class="reviewsContainer" layout="row">
+            <div flex="45" layout="column">
+              <div layout-align="start end" layout="row">
+                <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+                  <span class="material-icons md-10 starIcnSm" ng-class="{redStar: star<=catalogItem.CustomerReview[0].Pro[0].overallRating}">star</span>
+                </div>
+              </div>
+              <span id="reviewTitleTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].title"></span>
+              <span id="reviewTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].review"></span>
+              <div layout="row">
+                <span id="screenNameTxt" ng-bind-html="catalogItem.CustomerReview[0].Pro[0].screenName"></span>
+                <span id="dateTxt" ng-bind="getDate(catalogItem.CustomerReview[0].Pro[0].datePosted)"></span>
+              </div>
+            </div>
+            <div flex="10"></div>
+            <div flex="45" layout="column">
+              <div layout-align="start end" layout="row">
+                <div class="starsContainer" ng-repeat="star in numberOfStars" layout="row">
+                  <span class="material-icons md-10 starIcnSm" ng-class="{redStar: star <= catalogItem.CustomerReview[0].Con[0].overallRating}">star</span>
+                </div>
+              </div>
+              <span id="reviewTitleTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].title"></span>
+              <span id="reviewTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].review"></span>
+              <div layout="row">
+                <span id="screenNameTxt"ng-bind-html="catalogItem.CustomerReview[0].Con[0].screenName"></span>
+                <span id="dateTxt" ng-bind="getDate(catalogItem.CustomerReview[0].Con[0].datePosted)"></span>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div ng-if="validData==false" layout-gt-md="row" layout-sm="column" flex="90" layout-align="center center">
+    <div layout="column" flex-lg="45" flex-xl="45" flex="100">
+
+      <!-- PRODUCT NOT AVAILABLE -->
+      <div class="sectionContainer" layout="row" flex-order-md="-20" flex-order-gt-md="1">
+        <div flex="10"></div>
+        <div class="titleContainer" flex="80" layout="column">
+          <h2>product not available</h1>
+          <p>we're sorry! this page is currently unavailable. please try again later</p>
+        </div>
+        <div flex="10"></div>
+      </div>
+    </div>
+  </div>
+
+  <div layout="column" flex="10"></div>
+</div>

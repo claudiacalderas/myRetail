@@ -1,4 +1,4 @@
-var myRetailApp = angular.module('myRetailApp', ['ngRoute','ngMaterial']);
+var myRetailApp = angular.module('myRetailApp', ['ngRoute','ngMaterial','ngSanitize']);
 
 // Angular Material Theme Configuration
 myRetailApp.config(['$mdThemingProvider', function($mdThemingProvider) {
@@ -11,11 +11,11 @@ myRetailApp.config(['$routeProvider', '$locationProvider',
   $locationProvider.hashPrefix('');
 
   $routeProvider
-    .when('/home', {
+    .when('/home:code', {
       templateUrl: '/views/templates/product.html',
       controller: 'ProductController',
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'home0'
     });
 }]);
