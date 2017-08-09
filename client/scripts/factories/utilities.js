@@ -1,7 +1,5 @@
 myRetailApp.factory('Utilities', [function() {
 
-  console.log('Utilities Loaded');
-
   // date formatting function.
   // receives a UTC date string and returns a formatted date "Month day, year"
   function getDate(dateString) {

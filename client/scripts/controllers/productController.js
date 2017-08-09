@@ -29,12 +29,10 @@ myRetailApp.controller('ProductController', ['$scope','$http','$routeParams','Da
     // Using routeParams to get CatalogItem from DB with different values for
     // purchasingChannelCode
     // $routeParams valid codes: 0,1
-    console.log('$routeParams.code',data.data[$routeParams.code]);
     if ($routeParams.code == 0 || $routeParams.code == 1 || $routeParams.code == 0 ||
         data.data[$routeParams.code]) {
       $scope.validData = true;
       $scope.catalogItem = data.data[$routeParams.code].CatalogEntryView[0];
-      console.log("CATALOG ITEM:", $scope.catalogItem);
       // sets value of primaryImage
       $scope.primaryImageURL = $scope.catalogItem.Images[0].PrimaryImage[0].image;
       // sets variables to show/noshow buttons depending on purchasingChannelCode value
