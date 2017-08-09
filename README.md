@@ -47,12 +47,19 @@ or 2.
 2. Run `npm install`
 3. Run `grunt`
 4. If running the app locally, ensure Mongo is running `mongod`
+    In Robomongo:
+      Create database: `targetcasestudy`
+      Define collection: `catalog`
+      Insert document and paste content of `item-data.json`
+
+    In Shell:
+      `mongoimport -d targetcasestudy -c catalog item-data.json`
 
 ## Tests
 
 To launch the application's tests, run:
 
-  npm test
+    npm test
 
 ## Deploy
 
