@@ -26,6 +26,7 @@
     "grunt-contrib-uglify": "^2.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "mongoose": "^4.9.3",
+    "protractor": "^5.1.2",
     "q": "^1.5.0"
   }
 }

@@ -1,5 +1,5 @@
-myRetailApp.controller('ProductController', ['$scope','$http','DataService','Utilities',
-                      function($scope, $http, DataService, Utilities) {
+myRetailApp.controller('ProductController', ['$scope','$http','$routeParams','DataService','Utilities',
+                      function($scope, $http, $routeParams, DataService, Utilities) {
 
   // Number of visible images for carousel
   NUM_VISIBLE_IMAGES = 3;
@@ -26,31 +26,42 @@ myRetailApp.controller('ProductController', ['$scope','$http','DataService','Uti
 
   // Calls Factory function that gets catalog information from the database
   DataService.getCatalogItem().then(function(data){
-    // Using only one item in DB loaded from JSON file for this case study
-    $scope.catalogItem = data.data[0].CatalogEntryView[0];
-    console.log("CATALOG ITEM:", $scope.catalogItem);
-    // sets value of primaryImage
-    $scope.primaryImageURL = $scope.catalogItem.Images[0].PrimaryImage[0].image;
-    // sets variables to show/noshow buttons depending on purchasingChannelCode value
-    switch (parseInt($scope.catalogItem.purchasingChannelCode)) {
-      case 0:
-        $scope.pickUpVisible = true;
-        $scope.addToCartVisible = true;
-        break;
-      case 1:
-        $scope.pickUpVisible = false;
-        $scope.addToCartVisible = true;
-        break;
-      case 2:
-        $scope.pickUpVisible = true;
-        $scope.addToCartVisible = false;
-        break;
-      default:
-        $scope.pickUpVisible = false;
-        $scope.addToCartVisible = false;
+    // Using routeParams to get CatalogItem from DB with different values for
+    // purchasingChannelCode
+    // $routeParams valid codes: 0,1
+    console.log('$routeParams.code',data.data[$routeParams.code]);
+    if ($routeParams.code == 0 || $routeParams.code == 1 || $routeParams.code == 0 ||
+        data.data[$routeParams.code]) {
+      $scope.validData = true;
+      $scope.catalogItem = data.data[$routeParams.code].CatalogEntryView[0];
+      console.log("CATALOG ITEM:", $scope.catalogItem);
+      // sets value of primaryImage
+      $scope.primaryImageURL = $scope.catalogItem.Images[0].PrimaryImage[0].image;
+      // sets variables to show/noshow buttons depending on purchasingChannelCode value
+      switch (parseInt($scope.catalogItem.purchasingChannelCode)) {
+        case 0:
+          $scope.pickUpVisible = true;
+          $scope.addToCartVisible = true;
+          break;
+        case 1:
+          $scope.pickUpVisible = false;
+          $scope.addToCartVisible = true;
+          break;
+        case 2:
+          $scope.pickUpVisible = true;
+          $scope.addToCartVisible = false;
+          break;
+        default:
+          $scope.pickUpVisible = false;
+          $scope.addToCartVisible = false;
+      }
+      // save number of alternate images in a variable for carousel functionality
+      numOfAlternateImages = $scope.catalogItem.Images[0].AlternateImages.length;
+    } else {
+      // product not found (not a valid route)
+      console.log('product not found (not a valid route)');
+      $scope.validData = false;
     }
-    // save number of alternate images in a variable for carousel functionality
-    numOfAlternateImages = $scope.catalogItem.Images[0].AlternateImages.length;
   })
   .catch(function(response){
       console.log(response.status);

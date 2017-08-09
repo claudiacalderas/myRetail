@@ -1,6 +1,6 @@
 <div layout="row" class="pageContent">
   <div layout="column" flex="10"></div>
-  <div layout-gt-md="row" layout-sm="column" flex="90" layout-align="center start">
+  <div ng-if="validData==true" layout-gt-md="row" layout-sm="column" flex="90" layout-align="center start">
     <div layout="column" flex-lg="45" flex-xl="45" flex="100">
 
       <!-- TITLE -->
@@ -130,9 +130,9 @@
             <span id="quantityTxt">quantity:</span>
           </div>
           <div flex="50" layout="row" layout-align="end end" layout-fill>
-            <span class="material-icons md-14 quantityIcn" ng-click="removeQuantity()">remove_circle</span>
+            <span id="minusIcon" class="material-icons md-14 quantityIcn" ng-click="removeQuantity()">remove_circle</span>
             <span id="quantityNumTxt">{{quantity}}</span>
-            <span class="material-icons md-14 quantityIcn" ng-click="addQuantity()">add_circle</span>
+            <span id="plusIcon" class="material-icons md-14 quantityIcn" ng-click="addQuantity()">add_circle</span>
           </div>
         </div>
       </div>
@@ -140,12 +140,12 @@
       <!-- BUTTONS (PICK UP IN STORE, ADD TO CART) -->
       <div class="sectionContainer" layout="row" layout-align="center start" flex-order-md="-15" flex-order-gt-md="9">
         <div layout="column" flex="50" layout-align="center center">
-          <md-button  class="pickUpBtn md-raised" type="submit" name="pickUp" aria-label="Pick up in store" value="Pick Up" ng-class="{btnVisible: (pickUpVisible === true), btnInvisible: (pickUpVisible === false)}" ng-click="">PICK UP IN STORE</md-button>
+          <md-button id="pickUpInStore" class="pickUpBtn md-raised" type="submit" name="pickUp" aria-label="Pick up in store" value="Pick Up" ng-class="{btnVisible: (pickUpVisible === true), btnInvisible: (pickUpVisible === false)}" ng-click="">PICK UP IN STORE</md-button>
           <!-- FIND IN A STORE -->
           <span id="findInStoreTxt">find in a store</span>
         </div>
         <div flex="50">
-          <md-button class="addToCartBtn md-raised" type="submit" name="addToCart" aria-label="Add To Cart" value="Add To Cart" ng-class="{btnVisible: (addToCartVisible === true), btnInvisible: (addToCartVisible === false)}" ng-click="">ADD TO CART</md-button>
+          <md-button id="addToCart" class="addToCartBtn md-raised" type="submit" name="addToCart" aria-label="Add To Cart" value="Add To Cart" ng-class="{btnVisible: (addToCartVisible === true), btnInvisible: (addToCartVisible === false)}" ng-click="">ADD TO CART</md-button>
         </div>
       </div>
 
@@ -246,6 +246,21 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <div ng-if="validData==false" layout-gt-md="row" layout-sm="column" flex="90" layout-align="center center">
+    <div layout="column" flex-lg="45" flex-xl="45" flex="100">
+
+      <!-- PRODUCT NOT AVAILABLE -->
+      <div class="sectionContainer" layout="row" flex-order-md="-20" flex-order-gt-md="1">
+        <div flex="10"></div>
+        <div class="titleContainer" flex="80" layout="column">
+          <h2>product not available</h1>
+          <p>we're sorry! this page is currently unavailable. please try again later</p>
+        </div>
+        <div flex="10"></div>
+      </div>
     </div>
   </div>
 

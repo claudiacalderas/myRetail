@@ -11,11 +11,11 @@ myRetailApp.config(['$routeProvider', '$locationProvider',
   $locationProvider.hashPrefix('');
 
   $routeProvider
-    .when('/home', {
+    .when('/home:code', {
       templateUrl: '/views/templates/product.html',
       controller: 'ProductController',
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'home0'
     });
 }]);
